@@ -174,7 +174,10 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
 .coin{position:absolute;top:-30px;font-size:20px;animation:fall linear forwards}
 @keyframes fall{to{top:110%;transform:rotate(360deg)}}
 [dir="rtl"] .hero p,[dir="rtl"] .section-sub{text-align:right}
-
+.modal-section{margin-bottom:20px}
+.modal-section h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.modal-section p{margin-bottom:8px}
+ 
 /* ===== MOBILE OPTIMIZATIONS ===== */
 @media(max-width:600px){
   /* Nav */
@@ -184,7 +187,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
   .lang-label{display:none}
   .lang-select{font-size:12px;padding:5px 22px 5px 8px}
   .nav-cta{font-size:12px;padding:6px 12px}
-
+ 
   /* Hero */
   .hero{padding:44px 16px 36px}
   .hero h1{font-size:clamp(26px,8vw,40px);letter-spacing:-0.5px}
@@ -194,60 +197,60 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
   .hero-stats{gap:16px}
   .hero-stat .num{font-size:20px}
   .hero-stat .lbl{font-size:11px}
-
+ 
   /* Wins carousel */
   .win-pill{padding:8px 12px 8px 10px;gap:8px}
   .win-multiplier{font-size:18px}
   .win-game-label{font-size:8px}
   .win-game-icon img{width:20px;height:20px}
-
+ 
   /* Sections padding */
   div[style*="padding:56px 20px"]{padding:36px 14px !important}
   div[style*="padding:44px 20px"]{padding:28px 14px !important}
   div[style*="padding:48px 20px"]{padding:28px 14px !important}
-
+ 
   /* Section titles */
   .section-title{font-size:clamp(20px,6vw,28px)}
   .section-sub{font-size:13px;margin-bottom:24px}
-
+ 
   /* Catalog */
   .catalog-grid{grid-template-columns:1fr;gap:14px}
   .catalog-thumb{height:140px}
   .catalog-name{font-size:15px}
   .catalog-desc{font-size:12px}
-
+ 
   /* Bookie */
   .bookie-grid{grid-template-columns:1fr 1fr;gap:10px}
   .bookie-name{font-size:15px}
   .bookie-bonus{font-size:11px}
   .bookie-btn{font-size:12px;padding:8px}
-
+ 
   /* How it works */
   .hiw-grid{grid-template-columns:1fr 1fr;gap:12px}
   .hiw-card{padding:16px 14px}
   .hiw-num{font-size:28px}
   .hiw-card h3{font-size:14px}
   .hiw-card p{font-size:12px}
-
+ 
   /* Stats */
   .stats-wrap{padding:28px 16px;border-radius:14px}
   .stats-grid{grid-template-columns:1fr 1fr;gap:16px}
   .stat-item .stat-num{font-size:26px}
   .stat-item .stat-lbl{font-size:12px}
-
+ 
   /* Reviews */
   .testi-card{width:240px;padding:16px}
   .testi-text{font-size:12px}
-
+ 
   /* FAQ */
   .faq-q{font-size:13px;padding:14px 16px}
   .faq-a{font-size:12px}
-
+ 
   /* Footer */
   footer{padding:28px 16px}
   .footer-logo{font-size:16px}
   .footer-links{gap:10px;font-size:12px}
-
+ 
   /* Detail page */
   .detail-hero{padding:28px 16px 36px}
   .detail-title{font-size:clamp(22px,7vw,36px)}
@@ -261,13 +264,13 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
   .detail-p{font-size:14px}
   .feature-list{grid-template-columns:1fr}
   .back-btn{font-size:13px;padding:6px 12px}
-
+ 
   /* Modal */
   #modal-box{width:95vw !important;max-height:85vh !important}
   #modal-box > div:first-child{padding:16px 18px}
   #modal-body{padding:16px 18px}
 }
-
+ 
 @media(max-width:400px){
   .bookie-grid{grid-template-columns:1fr}
   .hiw-grid{grid-template-columns:1fr}
@@ -276,7 +279,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="nav-logo" onclick="goHome()">
     <!-- To use a custom logo image, replace the img src below with your image URL -->
@@ -300,7 +303,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
   </div>
   <button class="nav-cta" data-i18n="joinNow" onclick="window.open('https://t.me/+9UWezNZyOGI5Njhl','_blank')">Join Now</button>
 </nav>
-
+ 
 <div id="page-home" class="page active">
   <section class="hero">
     <div class="hero-bg"></div>
@@ -320,14 +323,14 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       </div>
     </div>
   </section>
-
+ 
   <div style="padding:56px 20px;text-align:center;background:var(--av-dark)" id="predictor">
     <div class="section-label" style="color:var(--av-pink)" data-i18n="winsLabel">Live Results</div>
     <h2 class="section-title" style="color:#fff" data-i18n="winsTitle">Today's Big Wins</h2>
     <p class="section-sub" style="color:rgba(255,255,255,0.5)" data-i18n="winsSub">Real multipliers hit by our community today</p>
     <div class="wins-track-wrap"><div class="wins-track" id="winsTrack"></div></div>
   </div>
-
+ 
   <div style="padding:56px 20px;background:#fff" id="catalog">
     <div style="max-width:1100px;margin:0 auto;text-align:center">
       <div class="section-label" data-i18n="catalogLabel">Predictor Tools</div>
@@ -336,7 +339,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       <div class="catalog-grid" id="catalogGrid"></div>
     </div>
   </div>
-
+ 
   <div class="bookie-section">
     <div class="bookie-inner">
       <h2 data-i18n="bookieTitle">Play on Trusted Platforms</h2>
@@ -349,7 +352,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       </div>
     </div>
   </div>
-
+ 
   <div style="padding:56px 20px;background:var(--offwhite)">
     <div style="max-width:1100px;margin:0 auto;text-align:center">
       <div class="section-label" data-i18n="hiwLabel">Process</div>
@@ -363,7 +366,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       </div>
     </div>
   </div>
-
+ 
   <div style="padding:44px 20px">
     <div style="max-width:1100px;margin:0 auto">
       <div class="stats-wrap">
@@ -376,7 +379,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       </div>
     </div>
   </div>
-
+ 
   <div style="padding:56px 20px;background:var(--offwhite)">
     <div style="max-width:1200px;margin:0 auto;text-align:center">
       <div class="section-label" data-i18n="reviewsLabel">Reviews</div>
@@ -385,7 +388,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       <div class="reviews-carousel-wrap"><div class="reviews-track" id="reviewsTrack"></div></div>
     </div>
   </div>
-
+ 
   <div style="padding:56px 20px">
     <div style="max-width:1100px;margin:0 auto;text-align:center">
       <div class="section-label" data-i18n="faqLabel">FAQ</div>
@@ -403,8 +406,8 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       </div>
     </div>
   </div>
-
-
+ 
+ 
   <footer>
     <div class="footer-logo"><img src="assets/icons/logo.png" alt="" style="width:26px;height:26px;object-fit:contain;vertical-align:middle;margin-right:8px;border-radius:4px" onerror="this.style.display='none'">AVIATOR PREDICTOR</div>
     <div class="footer-links">
@@ -417,7 +420,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
     <div class="footer-copy">© 2025 AviatorPredictor. All rights reserved.</div>
   </footer>
 </div>
-
+ 
 <div id="page-detail" class="page">
   <div class="detail-hero">
     <div style="max-width:900px;margin:0 auto">
@@ -456,15 +459,30 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
   </div>
   <footer>
     <div class="footer-logo"><img src="assets/icons/logo.png" alt="" style="width:26px;height:26px;object-fit:contain;vertical-align:middle;margin-right:8px;border-radius:4px" onerror="this.style.display='none'">AVIATOR PREDICTOR</div>
-    <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Responsible Gambling</a><a href="#">Contact</a></div>
+    <div class="footer-links">
+      <a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a>
+      <a href="#" onclick="openModal('terms');return false;">Terms of Service</a>
+      <a href="#" onclick="openModal('respgambling');return false;">Responsible Gambling</a>
+      <a href="mailto:YOUR_EMAIL@yourdomain.com">Contact</a>
+    </div>
     <div class="footer-disc">This website is for educational purposes only. Gambling involves risk. Please gamble responsibly. 18+ only.</div>
     <div class="footer-copy">© 2025 AviatorPredictor. All rights reserved.</div>
   </footer>
 </div>
-
+ 
 <div class="money-rain" id="moneyRain"></div>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+ 
+<!-- MODALS -->
+<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;backdrop-filter:blur(4px)"></div>
+<div id="modal-box" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1001;background:#fff;border-radius:18px;width:min(700px,92vw);max-height:80vh;overflow:hidden;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,0.3)">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);flex-shrink:0">
+    <h3 id="modal-title" style="font-size:18px;font-weight:800;color:var(--dark)"></h3>
+    <button onclick="closeModal()" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--offwhite);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--muted)">×</button>
+  </div>
+  <div id="modal-body" style="padding:24px;overflow-y:auto;font-size:14px;color:var(--muted);line-height:1.8"></div>
+</div>
+ 
+<script>
 const T={
 en:{langLabel:'Choose Language',joinNow:'Join Now',heroBadge:'AI-Powered • Real-Time Signals',heroTitle:'Predict <span>Aviator</span><br>Before It Flies',heroSub:'Advanced algorithm analyzes live round data to generate high-accuracy multiplier predictions. Used by 180,000+ players worldwide.',viewTools:'View All Tools',stat1:'Accuracy Rate',stat2:'Active Users',stat3:'Live Signals',stat4:'Rounds Analyzed',winsLabel:'Live Results',winsTitle:"Today's Big Wins",winsSub:'Real multipliers hit by our community today',catalogLabel:'Predictor Tools',catalogTitle:'Our Signal Catalog',catalogSub:'Choose your platform and game — get access via our Telegram channel',bookieTitle:'Play on Trusted Platforms',bookieSub:'Get exclusive bonuses when you register through our links',hiwLabel:'Process',hiwTitle:'How It Works',hiwSub:'Three simple steps to start winning smarter',hiw1t:'Get Started',hiw1d:'Create your account instantly. No credit card required.',hiw2t:'Get Signal',hiw2d:'Our AI analyzes thousands of previous rounds and outputs a predicted multiplier.',hiw3t:'Cash Out Smart',hiw3d:'Place your bet and cash out before the plane flies past the predicted multiplier.',hiw4t:'Repeat & Win',hiw4d:'Use predictions consistently across rounds and grow your bankroll.',statLbl1:'Prediction Accuracy',statLbl2:'Daily Users',statLbl3:'Rounds Analyzed',statLbl4:'User Rating',reviewsLabel:'Reviews',reviewsTitle:'What Players Say',reviewsSub:'Real feedback from players using our predictor daily',faqLabel:'FAQ',faqTitle:'Frequently Asked Questions',faqSub:'Everything you need to know',faq1q:'Is Aviator Predictor free to use?',faq1a:'Our algorithm achieves Best accuracy. Join our Telegram channel to access signals instantly.',faq2q:'How accurate are the predictions?',faq2a:'Our algorithm achieves Best accuracy based on pattern analysis of over 2 million rounds.',faq3q:'Which platforms are supported?',faq3a:'We support 1xBet Crash, Aviator on 1win, Mostbet, Stake, Hollywood, Melbet, Betway, LuckyJet, and xMines.',faq4q:'How do I access the signals?',faq4a:'All signals are delivered through our Telegram channel.',faq5q:'Is gambling legal in my country?',faq5a:'Gambling laws vary by region. Please check local regulations before playing.',footerDisc:'This website is for educatinal purposes only. Gambling involves risk. Please gamble responsibly. 18+ only.'},
 hi:{langLabel:'भाषा चुनें',joinNow:'अभी जुड़ें',heroBadge:'AI-संचालित • रीयल-टाइम सिग्नल',heroTitle:'<span>एविएटर</span> को उड़ने से पहले<br>भविष्यवाणी करें',heroSub:'उन्नत एल्गोरिथ्म लाइव राउंड डेटा का विश्लेषण करता है। दुनियाभर में 1,80,000+ खिलाड़ियों द्वारा उपयोग किया जाता है।',viewTools:'सभी टूल देखें',stat1:'सटीकता दर',stat2:'सक्रिय उपयोगकर्ता',stat3:'लाइव सिग्नल',stat4:'विश्लेषित राउंड',winsLabel:'लाइव परिणाम',winsTitle:'आज की बड़ी जीत',winsSub:'आज हमारे समुदाय के हिट मल्टीप्लायर',catalogLabel:'प्रेडिक्टर टूल्स',catalogTitle:'हमारा सिग्नल कैटलॉग',catalogSub:'अपना प्लेटफॉर्म चुनें — Telegram से मुफ्त एक्सेस',bookieTitle:'विश्वसनीय प्लेटफॉर्म पर खेलें',bookieSub:'हमारे लिंक से रजिस्टर करें और बोनस पाएं',hiwLabel:'प्रक्रिया',hiwTitle:'यह कैसे काम करता है',hiwSub:'स्मार्ट जीत के तीन सरल चरण',hiw1t:'मुफ्त रजिस्टर करें',hiw1d:'तुरंत मुफ्त खाता बनाएं।',hiw2t:'सिग्नल पाएं',hiw2d:'हमारा AI हजारों राउंड का विश्लेषण करता है।',hiw3t:'स्मार्ट कैश आउट',hiw3d:'सही समय पर कैश आउट करें।',hiw4t:'दोहराएं और जीतें',hiw4d:'लगातार भविष्यवाणियों का उपयोग करें।',statLbl1:'भविष्यवाणी सटीकता',statLbl2:'दैनिक उपयोगकर्ता',statLbl3:'विश्लेषित राउंड',statLbl4:'यूजर रेटिंग',reviewsLabel:'समीक्षाएं',reviewsTitle:'खिलाड़ी क्या कहते हैं',reviewsSub:'प्रतिदिन हमारे प्रेडिक्टर उपयोगकर्ताओं की असली प्रतिक्रिया',faqLabel:'FAQ',faqTitle:'अक्सर पूछे जाने वाले प्रश्न',faqSub:'आपको जो कुछ जानना है',faq1q:'क्या यह मुफ्त है?',faq1a:'हां, पूरी तरह मुफ्त। Telegram चैनल से जुड़ें।',faq2q:'भविष्यवाणियां कितनी सटीक हैं?',faq2a:'2 मिलियन+ राउंड के आधार पर Best सटीकता।',faq3q:'कौन से प्लेटफॉर्म सपोर्टेड हैं?',faq3a:'1xBet, 1win, Mostbet, Stake, Hollywood, Melbet, Betway।',faq4q:'सिग्नल कैसे मिलेंगे?',faq4a:'Telegram चैनल के माध्यम से मुफ्त।',faq5q:'क्या जुआ कानूनी है?',faq5a:'स्थानीय नियम जांचें।',footerDisc:'यह वेबसाइट केवल मनोरंजन के लिए है। जिम्मेदारी से खेलें। 18+।'},
@@ -476,7 +494,7 @@ pt:{langLabel:'Escolher idioma',joinNow:'Junte-se agora',heroBadge:'Impulsionado
 ko:{langLabel:'언어 선택',joinNow:'지금 참여',heroBadge:'AI 기반 • 실시간 신호',heroTitle:'날기 전에 <span>에비에이터</span><br>예측하기',heroSub:'고급 알고리즘이 실시간 데이터를 분석합니다. 전 세계 18만+ 플레이어가 사용합니다.',viewTools:'모든 도구 보기',stat1:'정확도',stat2:'활성 사용자',stat3:'라이브 신호',stat4:'분석된 라운드',winsLabel:'실시간 결과',winsTitle:'오늘의 큰 승리',winsSub:'오늘 커뮤니티의 실제 배수',catalogLabel:'예측 도구',catalogTitle:'신호 카탈로그',catalogSub:'플랫폼 선택 — Telegram 무료 접근',bookieTitle:'신뢰할 수 있는 플랫폼',bookieSub:'링크로 가입하면 독점 보너스',hiwLabel:'과정',hiwTitle:'작동 방식',hiwSub:'더 스마트하게 이기는 세 단계',hiw1t:'무료 등록',hiw1d:'즉시 무료 계정을 만드세요.',hiw2t:'신호 받기',hiw2d:'AI가 수천 개의 라운드를 분석합니다.',hiw3t:'스마트 현금화',hiw3d:'예측된 배수에서 현금화하세요.',hiw4t:'반복해서 이기기',hiw4d:'꾸준히 예측을 사용하세요.',statLbl1:'예측 정확도',statLbl2:'일일 사용자',statLbl3:'분석된 라운드',statLbl4:'사용자 평가',reviewsLabel:'리뷰',reviewsTitle:'플레이어들의 말',reviewsSub:'매일 사용하는 플레이어들의 피드백',faqLabel:'FAQ',faqTitle:'자주 묻는 질문',faqSub:'알아야 할 모든 것',faq1q:'무료인가요?',faq1a:'네, 무료입니다. Telegram 채널에 참여하세요.',faq2q:'얼마나 정확한가요?',faq2a:'200만+ 라운드 기반 Best 정확도.',faq3q:'어떤 플랫폼?',faq3a:'1xBet, 1win, Mostbet, Stake, Hollywood, Melbet, Betway.',faq4q:'신호 접근 방법?',faq4a:'Telegram 채널을 통해 무료.',faq5q:'합법인가요?',faq5a:'지역 규정을 확인하세요.',footerDisc:'오락 목적으로만 사용됩니다. 책임감 있게 도박하세요. 18세 이상.'},
 ur:{langLabel:'زبان منتخب کریں',joinNow:'ابھی شامل ہوں',heroBadge:'AI سے چلنے والا • ریئل ٹائم سگنل',heroTitle:'<span>ایویٹر</span> کو اڑنے سے پہلے<br>پیش گوئی کریں',heroSub:'جدید الگورتھم لائیو راؤنڈ ڈیٹا کا تجزیہ کرتا ہے۔ دنیا بھر میں 180,000+ کھلاڑی استعمال کرتے ہیں۔',viewTools:'تمام ٹولز دیکھیں',stat1:'درستگی کی شرح',stat2:'فعال صارفین',stat3:'لائیو سگنل',stat4:'تجزیہ شدہ راؤنڈ',winsLabel:'لائیو نتائج',winsTitle:'آج کی بڑی جیت',winsSub:'آج ہماری کمیونٹی کے حقیقی ملٹی پلائر',catalogLabel:'پیشن گوئی ٹولز',catalogTitle:'ہمارا سگنل کیٹلاگ',catalogSub:'اپنا پلیٹ فارم منتخب کریں — Telegram کے ذریعے مفت رسائی',bookieTitle:'قابل اعتماد پلیٹ فارم',bookieSub:'ہمارے لنکس سے رجسٹر کریں اور بونس پائیں',hiwLabel:'عمل',hiwTitle:'یہ کیسے کام کرتا ہے',hiwSub:'ذہانت سے جیتنے کے تین مراحل',hiw1t:'مفت رجسٹریشن',hiw1d:'فوری طور پر مفت اکاؤنٹ بنائیں۔',hiw2t:'سگنل حاصل کریں',hiw2d:'ہمارا AI ہزاروں راؤنڈ کا تجزیہ کرتا ہے۔',hiw3t:'سمارٹ کیش آؤٹ',hiw3d:'صحیح وقت پر کیش آؤٹ کریں۔',hiw4t:'دہرائیں اور جیتیں',hiw4d:'مستقل طور پر پیشن گوئیوں کا استعمال کریں۔',statLbl1:'پیشن گوئی درستگی',statLbl2:'روزانہ صارفین',statLbl3:'تجزیہ شدہ راؤنڈ',statLbl4:'صارف ریٹنگ',reviewsLabel:'جائزے',reviewsTitle:'کھلاڑی کیا کہتے ہیں',reviewsSub:'روزانہ صارفین کے حقیقی تاثرات',faqLabel:'FAQ',faqTitle:'اکثر پوچھے جانے والے سوالات',faqSub:'آپ کو جو کچھ جاننا ہے',faq1q:'کیا یہ مفت ہے؟',faq1a:'ہاں، مکمل طور پر مفت۔ Telegram سے جڑیں۔',faq2q:'درستگی کتنی ہے؟',faq2a:'2 ملین+ راؤنڈ پر Best درستگی۔',faq3q:'کون سے پلیٹ فارم؟',faq3a:'1xBet، 1win، Mostbet، Stake، Hollywood، Melbet، Betway۔',faq4q:'سگنل کیسے ملیں؟',faq4a:'Telegram چینل کے ذریعے مفت۔',faq5q:'کیا جوا قانونی ہے؟',faq5a:'مقامی ضوابط جانچیں۔',footerDisc:'یہ صرف تفریح کے لیے ہے۔ ذمہ داری سے کھیلیں۔ صرف 18+۔'}
 };
-
+ 
 function setLang(lang){
   const t=T[lang];if(!t)return;
   document.documentElement.setAttribute('dir',lang==='ur'?'rtl':'ltr');
@@ -485,7 +503,7 @@ function setLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k]!==undefined)el.textContent=t[k];});
   document.querySelectorAll('[data-i18n-html]').forEach(el=>{const k=el.getAttribute('data-i18n-html');if(t[k]!==undefined)el.innerHTML=t[k];});
 }
-
+ 
 // game icon image paths — add your images to assets/icons/ in your repo
 const gameIconImgs={
   aviator:'assets/icons/aviator.png',
@@ -493,7 +511,7 @@ const gameIconImgs={
   luckyjet:'assets/icons/luckyjet.png',
   mines:'assets/icons/mines.png',
 };
-
+ 
 // fallback SVG icons if no image is set
 const gameIconsSVG={
   aviator:`<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 3L3 10.5L10 13L13 20L21 3Z" fill="currentColor" opacity="0.2"/><path d="M21 3L3 10.5L10 13M21 3L13 20L10 13M21 3L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
@@ -501,15 +519,15 @@ const gameIconsSVG={
   luckyjet:`<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12C5 12 6 4 12 4C15 4 17 6 18 8L20 7L19 10L20 13L18 12C17 14 15 16 12 16C9 16 7 14 6 13L4 15L5 12Z" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 13L3 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`,
   mines:`<svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="13" r="6" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13" r="2" fill="currentColor"/><line x1="12" y1="4" x2="12" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="5.5" y1="6.5" x2="7.5" y2="8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="18.5" y1="6.5" x2="16.5" y2="8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="13" x2="6" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="21" y1="13" x2="18" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>`,
 };
-
+ 
 const gameLabels={aviator:'Aviator',crash:'Crash',luckyjet:'LuckyJet',mines:'Mines'};
-
+ 
 function getGameIcon(g){
   const url=gameIconImgs[g];
   if(url) return `<img src="${url}" alt="${g}" style="width:24px;height:24px;object-fit:contain;border-radius:4px">`;
   return `<span style="color:rgba(255,255,255,0.7)">${gameIconsSVG[g]||gameIconsSVG.aviator}</span>`;
 }
-
+ 
 const wins=[
   {v:'12.45',u:'@lucky_sam',g:'aviator'},{v:'3.21',u:'@aviator_pro',g:'aviator'},
   {v:'89.00',u:'@bigwin_bg',g:'crash'},{v:'2.33',u:'@john_d',g:'mines'},
@@ -527,7 +545,7 @@ const wins=[
   {v:'50.25',u:'@big_player',g:'aviator'},{v:'1.65',u:'@quick_cash',g:'crash'},
   {v:'9.99',u:'@9x_winner',g:'luckyjet'},{v:'38.00',u:'@tg_fan',g:'aviator'},
 ];
-
+ 
 function buildWinsCarousel(){
   const track=document.getElementById('winsTrack');
   const all=[...wins,...wins];
@@ -541,7 +559,7 @@ function buildWinsCarousel(){
     </div>`;
   }).join('');
 }
-
+ 
 const reviews=[
   {t:"I've been using this for 3 weeks and my results improved significantly. The signals are surprisingly accurate.",n:"James K.",l:"United Kingdom",i:"JK"},
   {t:"Best predictor tool I've found. Clean interface, fast signals. Helps me decide when to cash out.",n:"Maria L.",l:"Brazil",i:"ML"},
@@ -574,13 +592,13 @@ const reviews=[
   {t:"Been using for a month. My bankroll is up 40%. Very satisfied with the results.",n:"Eduardo F.",l:"Brazil",i:"EF"},
   {t:"The AI is genuinely impressive. I can see it's doing real pattern analysis every round.",n:"Lin W.",l:"Singapore",i:"LW"},
 ];
-
+ 
 function buildReviewsCarousel(){
   const track=document.getElementById('reviewsTrack');
   const all=[...reviews,...reviews];
   track.innerHTML=all.map(r=>`<div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"${r.t}"</p><div class="testi-author"><div class="testi-avatar">${r.i}</div><div><div class="testi-name">${r.n}</div><div class="testi-loc">${r.l}</div></div></div></div>`).join('');
 }
-
+ 
 // Images go in assets/products/, videos in assets/videos/
 // Leave image/video as '' to use default gradient/placeholder
 const products=[
@@ -675,7 +693,7 @@ const products=[
    steps:[{title:'Join our Telegram',desc:'Click the button to join our Telegram channel.'},{title:'Open Betway Aviator',desc:'Log in to Betway and open the Aviator game.'},{title:'Watch for the signal',desc:'Our bot sends the betway aviator predictor signal before each round.'},{title:'Time your cash-out',desc:'Cash out near the betway aviator signal value for best results.'}],
    affLink:'#'}
 ];
-
+ 
 function renderCatalog(){
   const grid=document.getElementById('catalogGrid');
   grid.innerHTML=products.map(p=>{
@@ -683,7 +701,7 @@ function renderCatalog(){
     return `<div class="catalog-card" onclick="openProduct('${p.id}')"><div class="catalog-thumb ${p.image?'':p.thumbClass}" ${imgStyle}>${!p.image?`<span style="font-size:52px">${p.emoji}</span>`:''}<div class="catalog-badge">${p.tag}</div></div><div class="catalog-body"><div class="catalog-platform">${p.platform}</div><div class="catalog-name">${p.name}</div><div class="catalog-desc">${p.shortDesc}</div><div class="catalog-footer"><div class="catalog-arrow">→</div></div></div></div>`;
   }).join('');
 }
-
+ 
 function openProduct(id){
   const p=products.find(x=>x.id===id);if(!p)return;
   document.getElementById('detailPlatform').textContent=p.platform.toUpperCase();
@@ -703,33 +721,17 @@ function openProduct(id){
   }
   showPage('detail');window.scrollTo(0,0);
 }
-
+ 
 function goHome(){showPage('home');window.scrollTo(0,0);}
 function showPage(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+n).classList.add('active');}
 function toggleFAQ(el){const a=el.nextElementSibling;const icon=el.querySelector('.faq-icon');a.classList.toggle('open');icon.classList.toggle('open');}
 function spawnCoins(){const rain=document.getElementById('moneyRain');rain.style.display='block';for(let i=0;i<12;i++){setTimeout(()=>{const c=document.createElement('div');c.className='coin';c.textContent='💰';c.style.left=Math.random()*100+'%';c.style.animationDuration=(Math.random()*1+1.2)+'s';rain.appendChild(c);setTimeout(()=>c.remove(),2500);},i*80);}setTimeout(()=>{rain.style.display='none';},3000);}
-
+ 
 buildWinsCarousel();
 buildReviewsCarousel();
 renderCatalog();
-</script>
-<!-- MODALS -->
-<div id="modal-overlay" onclick="closeModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;backdrop-filter:blur(4px)"></div>
-<div id="modal-box" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1001;background:#fff;border-radius:18px;width:min(700px,92vw);max-height:80vh;overflow:hidden;display:none;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,0.3)">
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);flex-shrink:0">
-    <h3 id="modal-title" style="font-size:18px;font-weight:800;color:var(--dark)"></h3>
-    <button onclick="closeModal()" style="width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:var(--offwhite);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--muted)">×</button>
-  </div>
-  <div id="modal-body" style="padding:24px;overflow-y:auto;font-size:14px;color:var(--muted);line-height:1.8"></div>
-</div>
-
-<style>
-.modal-section{margin-bottom:20px}
-.modal-section h4{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:6px}
-.modal-section p{margin-bottom:8px}
-</style>
-
-<script>
+ 
+// ===== MODALS =====
 const modalContent={
   privacy:{
     title:'Privacy Policy',
@@ -785,7 +787,7 @@ const modalContent={
     `
   }
 };
-
+ 
 function openModal(type){
   const c=modalContent[type];if(!c)return;
   document.getElementById('modal-title').textContent=c.title;
@@ -797,4 +799,10 @@ function openModal(type){
 }
 function closeModal(){
   document.getElementById('modal-overlay').style.display='none';
-  document.getElementById('modal-box').style.
+  document.getElementById('modal-box').style.display='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
