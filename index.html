@@ -174,6 +174,105 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
 .coin{position:absolute;top:-30px;font-size:20px;animation:fall linear forwards}
 @keyframes fall{to{top:110%;transform:rotate(360deg)}}
 [dir="rtl"] .hero p,[dir="rtl"] .section-sub{text-align:right}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media(max-width:600px){
+  /* Nav */
+  nav{padding:0 12px;height:56px;gap:8px}
+  .nav-logo{font-size:13px;letter-spacing:0.8px}
+  .nav-logo-img{width:24px;height:24px}
+  .lang-label{display:none}
+  .lang-select{font-size:12px;padding:5px 22px 5px 8px}
+  .nav-cta{font-size:12px;padding:6px 12px}
+
+  /* Hero */
+  .hero{padding:44px 16px 36px}
+  .hero h1{font-size:clamp(26px,8vw,40px);letter-spacing:-0.5px}
+  .hero p{font-size:14px;margin-bottom:24px}
+  .hero-btns{gap:8px;margin-bottom:32px}
+  .btn-primary,.btn-secondary{padding:11px 20px;font-size:13px;width:100%}
+  .hero-stats{gap:16px}
+  .hero-stat .num{font-size:20px}
+  .hero-stat .lbl{font-size:11px}
+
+  /* Wins carousel */
+  .win-pill{padding:8px 12px 8px 10px;gap:8px}
+  .win-multiplier{font-size:18px}
+  .win-game-label{font-size:8px}
+  .win-game-icon img{width:20px;height:20px}
+
+  /* Sections padding */
+  div[style*="padding:56px 20px"]{padding:36px 14px !important}
+  div[style*="padding:44px 20px"]{padding:28px 14px !important}
+  div[style*="padding:48px 20px"]{padding:28px 14px !important}
+
+  /* Section titles */
+  .section-title{font-size:clamp(20px,6vw,28px)}
+  .section-sub{font-size:13px;margin-bottom:24px}
+
+  /* Catalog */
+  .catalog-grid{grid-template-columns:1fr;gap:14px}
+  .catalog-thumb{height:140px}
+  .catalog-name{font-size:15px}
+  .catalog-desc{font-size:12px}
+
+  /* Bookie */
+  .bookie-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .bookie-name{font-size:15px}
+  .bookie-bonus{font-size:11px}
+  .bookie-btn{font-size:12px;padding:8px}
+
+  /* How it works */
+  .hiw-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .hiw-card{padding:16px 14px}
+  .hiw-num{font-size:28px}
+  .hiw-card h3{font-size:14px}
+  .hiw-card p{font-size:12px}
+
+  /* Stats */
+  .stats-wrap{padding:28px 16px;border-radius:14px}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .stat-item .stat-num{font-size:26px}
+  .stat-item .stat-lbl{font-size:12px}
+
+  /* Reviews */
+  .testi-card{width:240px;padding:16px}
+  .testi-text{font-size:12px}
+
+  /* FAQ */
+  .faq-q{font-size:13px;padding:14px 16px}
+  .faq-a{font-size:12px}
+
+  /* Footer */
+  footer{padding:28px 16px}
+  .footer-logo{font-size:16px}
+  .footer-links{gap:10px;font-size:12px}
+
+  /* Detail page */
+  .detail-hero{padding:28px 16px 36px}
+  .detail-title{font-size:clamp(22px,7vw,36px)}
+  .detail-tagline{font-size:14px}
+  .detail-badges{gap:7px}
+  .detail-badge{font-size:11px;padding:4px 10px}
+  .tg-big-btn{font-size:14px;padding:13px 22px;width:100%;justify-content:center}
+  .detail-video-section{padding:28px 14px}
+  .detail-content{padding:0 14px 40px}
+  .detail-section-title{font-size:18px}
+  .detail-p{font-size:14px}
+  .feature-list{grid-template-columns:1fr}
+  .back-btn{font-size:13px;padding:6px 12px}
+
+  /* Modal */
+  #modal-box{width:95vw !important;max-height:85vh !important}
+  #modal-box > div:first-child{padding:16px 18px}
+  #modal-body{padding:16px 18px}
+}
+
+@media(max-width:400px){
+  .bookie-grid{grid-template-columns:1fr}
+  .hiw-grid{grid-template-columns:1fr}
+  .nav-logo{font-size:11px}
+}
 </style>
 </head>
 <body>
@@ -312,7 +411,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
       <a href="#" onclick="openModal('privacy');return false;">Privacy Policy</a>
       <a href="#" onclick="openModal('terms');return false;">Terms of Service</a>
       <a href="#" onclick="openModal('respgambling');return false;">Responsible Gambling</a>
-      <a href="mailto:YOUR_EMAIL@yourdomain.com">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#2a73657f78756f676b63666a53455f584e45474b434404494547">Contact</a>
     </div>
     <div class="footer-disc" data-i18n="footerDisc">This website is for educatinal purposes only. Gambling involves risk. Please gamble responsibly. 18+ only.</div>
     <div class="footer-copy">© 2025 AviatorPredictor. All rights reserved.</div>
@@ -365,7 +464,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);padding:36px 20px;text
 
 <div class="money-rain" id="moneyRain"></div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const T={
 en:{langLabel:'Choose Language',joinNow:'Join Now',heroBadge:'AI-Powered • Real-Time Signals',heroTitle:'Predict <span>Aviator</span><br>Before It Flies',heroSub:'Advanced algorithm analyzes live round data to generate high-accuracy multiplier predictions. Used by 180,000+ players worldwide.',viewTools:'View All Tools',stat1:'Accuracy Rate',stat2:'Active Users',stat3:'Live Signals',stat4:'Rounds Analyzed',winsLabel:'Live Results',winsTitle:"Today's Big Wins",winsSub:'Real multipliers hit by our community today',catalogLabel:'Predictor Tools',catalogTitle:'Our Signal Catalog',catalogSub:'Choose your platform and game — get access via our Telegram channel',bookieTitle:'Play on Trusted Platforms',bookieSub:'Get exclusive bonuses when you register through our links',hiwLabel:'Process',hiwTitle:'How It Works',hiwSub:'Three simple steps to start winning smarter',hiw1t:'Get Started',hiw1d:'Create your account instantly. No credit card required.',hiw2t:'Get Signal',hiw2d:'Our AI analyzes thousands of previous rounds and outputs a predicted multiplier.',hiw3t:'Cash Out Smart',hiw3d:'Place your bet and cash out before the plane flies past the predicted multiplier.',hiw4t:'Repeat & Win',hiw4d:'Use predictions consistently across rounds and grow your bankroll.',statLbl1:'Prediction Accuracy',statLbl2:'Daily Users',statLbl3:'Rounds Analyzed',statLbl4:'User Rating',reviewsLabel:'Reviews',reviewsTitle:'What Players Say',reviewsSub:'Real feedback from players using our predictor daily',faqLabel:'FAQ',faqTitle:'Frequently Asked Questions',faqSub:'Everything you need to know',faq1q:'Is Aviator Predictor free to use?',faq1a:'Our algorithm achieves Best accuracy. Join our Telegram channel to access signals instantly.',faq2q:'How accurate are the predictions?',faq2a:'Our algorithm achieves Best accuracy based on pattern analysis of over 2 million rounds.',faq3q:'Which platforms are supported?',faq3a:'We support 1xBet Crash, Aviator on 1win, Mostbet, Stake, Hollywood, Melbet, Betway, LuckyJet, and xMines.',faq4q:'How do I access the signals?',faq4a:'All signals are delivered through our Telegram channel.',faq5q:'Is gambling legal in my country?',faq5a:'Gambling laws vary by region. Please check local regulations before playing.',footerDisc:'This website is for educatinal purposes only. Gambling involves risk. Please gamble responsibly. 18+ only.'},
 hi:{langLabel:'भाषा चुनें',joinNow:'अभी जुड़ें',heroBadge:'AI-संचालित • रीयल-टाइम सिग्नल',heroTitle:'<span>एविएटर</span> को उड़ने से पहले<br>भविष्यवाणी करें',heroSub:'उन्नत एल्गोरिथ्म लाइव राउंड डेटा का विश्लेषण करता है। दुनियाभर में 1,80,000+ खिलाड़ियों द्वारा उपयोग किया जाता है।',viewTools:'सभी टूल देखें',stat1:'सटीकता दर',stat2:'सक्रिय उपयोगकर्ता',stat3:'लाइव सिग्नल',stat4:'विश्लेषित राउंड',winsLabel:'लाइव परिणाम',winsTitle:'आज की बड़ी जीत',winsSub:'आज हमारे समुदाय के हिट मल्टीप्लायर',catalogLabel:'प्रेडिक्टर टूल्स',catalogTitle:'हमारा सिग्नल कैटलॉग',catalogSub:'अपना प्लेटफॉर्म चुनें — Telegram से मुफ्त एक्सेस',bookieTitle:'विश्वसनीय प्लेटफॉर्म पर खेलें',bookieSub:'हमारे लिंक से रजिस्टर करें और बोनस पाएं',hiwLabel:'प्रक्रिया',hiwTitle:'यह कैसे काम करता है',hiwSub:'स्मार्ट जीत के तीन सरल चरण',hiw1t:'मुफ्त रजिस्टर करें',hiw1d:'तुरंत मुफ्त खाता बनाएं।',hiw2t:'सिग्नल पाएं',hiw2d:'हमारा AI हजारों राउंड का विश्लेषण करता है।',hiw3t:'स्मार्ट कैश आउट',hiw3d:'सही समय पर कैश आउट करें।',hiw4t:'दोहराएं और जीतें',hiw4d:'लगातार भविष्यवाणियों का उपयोग करें।',statLbl1:'भविष्यवाणी सटीकता',statLbl2:'दैनिक उपयोगकर्ता',statLbl3:'विश्लेषित राउंड',statLbl4:'यूजर रेटिंग',reviewsLabel:'समीक्षाएं',reviewsTitle:'खिलाड़ी क्या कहते हैं',reviewsSub:'प्रतिदिन हमारे प्रेडिक्टर उपयोगकर्ताओं की असली प्रतिक्रिया',faqLabel:'FAQ',faqTitle:'अक्सर पूछे जाने वाले प्रश्न',faqSub:'आपको जो कुछ जानना है',faq1q:'क्या यह मुफ्त है?',faq1a:'हां, पूरी तरह मुफ्त। Telegram चैनल से जुड़ें।',faq2q:'भविष्यवाणियां कितनी सटीक हैं?',faq2a:'2 मिलियन+ राउंड के आधार पर Best सटीकता।',faq3q:'कौन से प्लेटफॉर्म सपोर्टेड हैं?',faq3a:'1xBet, 1win, Mostbet, Stake, Hollywood, Melbet, Betway।',faq4q:'सिग्नल कैसे मिलेंगे?',faq4a:'Telegram चैनल के माध्यम से मुफ्त।',faq5q:'क्या जुआ कानूनी है?',faq5a:'स्थानीय नियम जांचें।',footerDisc:'यह वेबसाइट केवल मनोरंजन के लिए है। जिम्मेदारी से खेलें। 18+।'},
@@ -698,10 +797,4 @@ function openModal(type){
 }
 function closeModal(){
   document.getElementById('modal-overlay').style.display='none';
-  document.getElementById('modal-box').style.display='none';
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-</script>
-</body>
-</html>
+  document.getElementById('modal-box').style.
